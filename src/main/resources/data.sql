@@ -1,0 +1,21 @@
+INSERT INTO product_table (price, quantity, sku, title_x)
+VALUES
+(10.5, 8,  'bisc001',  'Marie Biscuit'),
+(25.5, 9,  'snack003', 'Lays Classic'),
+(30.0, 20, 'snack004', 'Lays Magic Masala'),
+(22.0, 10, 'snack005', 'Bingo Mad Angles'),
+(35.0, 15, 'drink006', 'Pepsi'),
+(40.0, 18, 'drink007', 'Sprite'),
+(45.0, 9,  'drink008', 'Fanta'),
+(28.5, 14, 'choco009', 'Dairy Milk'),
+(32.0, 11, 'choco010', 'KitKat'),
+(15.0, 25, 'bisc011',  'Hide and Seek'),
+(50.0, 7,  'drink012', 'Red Bull'),
+(55.0, 5,  'drink013', 'Monster Energy'),
+(12.0, 30, 'bisc014',  'Little Hearts'),
+(27.5, 16, 'snack015', 'Uncle Chips'),
+(60.0, 4,  'choco016', 'Ferrero Rocher'),
+(20.0, 22, 'snack017', 'Balaji Wafers'),
+(38.0, 13, 'drink018', 'Thums Up'),
+(24.0, 17, 'snack019', 'Haldiram Namkeen'),
+(14.5, 19, 'bisc020',  'Milk Bikis');
