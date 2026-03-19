@@ -10,16 +10,16 @@ phases:
       - export JAVA_HOME=/usr/lib/jvm/java-21-amazon-corretto.x86_64
       - export PATH=$JAVA_HOME/bin:$PATH
 
-      - echo JAVA_HOME=$JAVA_HOME
-      - which java
-      - java -version
-
   build:
     commands:
       - chmod +x mvnw
-      - ./mvnw clean package -DskipTests
+      - ./mvnw clean package
 
 artifacts:
   files:
+    - echo JAVA_HOME=$JAVA_HOME
+    - which java
+    - java -version
+
     - target/*.jar
   discard-paths: yes
