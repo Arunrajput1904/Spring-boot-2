@@ -5,14 +5,18 @@ phases:
     commands:
       - echo Installing Java 21...
       - yum install -y java-21-amazon-corretto
-      - export JAVA_HOME=/usr/lib/jvm/java-21-amazon-corretto
+
+      # 🔥 FIX: dynamically set JAVA_HOME
+      - export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
       - export PATH=$JAVA_HOME/bin:$PATH
+
+      - echo JAVA_HOME is $JAVA_HOME
       - java -version
 
   build:
     commands:
       - echo Building project...
-      - chmod +x mvnw   # 🔥 FIX HERE
+      - chmod +x mvnw
       - ./mvnw clean package -DskipTests
 
   post_build:
