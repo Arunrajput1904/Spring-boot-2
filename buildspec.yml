@@ -23,9 +23,6 @@ phases:
       # Fix permission
       - chmod +x mvnw
 
-      # Run build
-      - mvn clean package -DskipTests
-
   post_build:
     commands:
       - echo Build completed successfully
