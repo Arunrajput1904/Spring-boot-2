@@ -12,6 +12,7 @@ phases:
   build:
     commands:
       - echo Building project...
+      - chmod +x mvnw   # 🔥 FIX HERE
       - ./mvnw clean package -DskipTests
 
   post_build:
