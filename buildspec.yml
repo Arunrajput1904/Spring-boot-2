@@ -1,31 +1,10 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo Installing Java 21...
-      - yum install -y java-21-amazon-corretto
-
-      # 🔥 Dynamically detect JAVA_HOME (IMPORTANT)
-      - export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
-      - export PATH=$JAVA_HOME/bin:$PATH
-
-      - echo "Detected JAVA_HOME=$JAVA_HOME"
-      - java -version
-
   build:
     commands:
-      - echo Building project...
-
-      # Fix permission
       - chmod +x mvnw
-
-      # 🔥 Force Maven to use JAVA_HOME explicitly
-      - JAVA_HOME=$JAVA_HOME mvn clean package -DskipTests
-
-  post_build:
-    commands:
-      - echo Build completed successfully
+      - ./mvnw clean package -DskipTests
 
 artifacts:
   files:
