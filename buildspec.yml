@@ -2,24 +2,22 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      java: corretto17
+    commands:
+      - echo Installing Java 21...
+      - yum install -y java-21-amazon-corretto
+      - export JAVA_HOME=/usr/lib/jvm/java-21-amazon-corretto
+      - export PATH=$JAVA_HOME/bin:$PATH
+      - java -version
 
   build:
     commands:
-      - echo Build started...
-      - chmod +x mvnw
+      - echo Building project...
       - ./mvnw clean package -DskipTests
 
   post_build:
     commands:
-      - echo Build completed successfully
+      - echo Build completed
 
 artifacts:
   files:
     - target/*.jar
-  discard-paths: yes
-
-cache:
-  paths:
-    - /root/.m2/**/*
