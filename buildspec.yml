@@ -4,16 +4,16 @@ phases:
   install:
     commands:
       - echo Installing Java 21
-      - apt-get update
-      - apt-get install -y openjdk-21-jdk
-      - export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+      - yum update -y
+      - yum install -y java-21-amazon-corretto
+      - export JAVA_HOME=/usr/lib/jvm/java-21-amazon-corretto
       - export PATH=$JAVA_HOME/bin:$PATH
       - java -version
 
   build:
     commands:
       - chmod +x mvnw
-#      - ./mvnw clean package -DskipTests
+      - ./mvnw clean package -DskipTests
 
 artifacts:
   files:
