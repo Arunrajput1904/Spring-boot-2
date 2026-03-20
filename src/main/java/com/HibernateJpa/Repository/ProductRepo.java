@@ -20,7 +20,7 @@ public interface ProductRepo  extends JpaRepository<ProductEnitity, Long> {
 
     List<ProductEnitity> findByPriceBetween(BigDecimal min, BigDecimal max);
 
-    List<ProductEnitity> findByPriceGreaterThan(BigDecimal val);
+//    List<ProductEnitity> findByPriceGreaterThan(BigDecimal val);
 
     List<ProductEnitity> findByPriceLessThan(BigDecimal val);
 
