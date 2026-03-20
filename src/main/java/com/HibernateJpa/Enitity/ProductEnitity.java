@@ -2,31 +2,27 @@ package com.HibernateJpa.Enitity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
 @Builder
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
-@Table(
-        name = "product_table",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "title_price_unique",columnNames = {"title_x","price"})
-        },
-        indexes = {
-                @Index(name = "sku_index", columnList = "sku")
-        }
-)
-public class ProductEnitity{
+@Table(name = "product_table", indexes = {
+        @Index(name = "sku_index", columnList = "sku")
+}, uniqueConstraints = {
+        @UniqueConstraint(name = "title_price_unique", columnNames = {"title_x", "price"})
+})
+public class ProductEnitity {
 
 
     @Id
@@ -49,5 +45,8 @@ public class ProductEnitity{
 @UpdateTimestamp
     private LocalDateTime  updateAt;
 
+
+@ManyToOne
+Department department;
 
 }

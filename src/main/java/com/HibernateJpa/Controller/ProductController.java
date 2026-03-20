@@ -4,6 +4,7 @@ package com.HibernateJpa.Controller;
 import com.HibernateJpa.Enitity.ProductEnitity;
 import com.HibernateJpa.Repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -23,6 +24,7 @@ public class ProductController {
     private  final int pageSize=5;
 
     @Autowired
+
     ProductRepo Repo;
 
 

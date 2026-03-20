@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.shadow.com.univocity.parsers.common.input.LineSeparatorDetector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Lazy;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -16,6 +17,7 @@ class HiberJpaApplicationTests {
 
 
     @Autowired
+            @Lazy
     ProductRepo Repo;
 
 	@Test
