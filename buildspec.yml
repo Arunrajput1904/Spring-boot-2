@@ -6,7 +6,7 @@ phases:
       - echo Installing Java 21
       - yum install -y java-21-amazon-corretto
 
-      # FIXED PATH 👇
+
       - export JAVA_HOME=/usr/lib/jvm/java-21-amazon-corretto.x86_64
       - export PATH=$JAVA_HOME/bin:$PATH
 
@@ -20,6 +20,5 @@ artifacts:
     - echo JAVA_HOME=$JAVA_HOME
     - which java
     - java -version
-
     - target/*.jar
   discard-paths: yes
