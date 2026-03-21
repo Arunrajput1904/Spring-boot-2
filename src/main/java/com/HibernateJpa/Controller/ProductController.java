@@ -30,7 +30,6 @@ public class ProductController {
 
     @GetMapping
     public List<ProductEnitity> getall(@RequestParam(defaultValue = "") String title,  @RequestParam(defaultValue = "id") String sortBody,@RequestParam(defaultValue = "1") Integer pageNumber){
-//        return  Repo.findAll(Sort.by(Sort.Direction.DESC,sortBody,"price"));
 
         return  Repo.findByTitleContainingIgnoreCase(
                 title,
@@ -39,15 +38,6 @@ public class ProductController {
                    Sort.Order.asc("price")
                 ))
         );
-        
-//        return  Repo.findAll(Sort.by(
-//           Sort.Order.asc(sortBody),
-//           Sort.Order.asc("price")
-//        ));
-
-//        Pageable pageable= PageRequest.of(pageNumber,pageSize,Sort.by(Sort.Order.asc(sortBody),Sort.Order.asc("price")));
-//
-//        return Repo.findAll(pageable).getContent();
     }
 
 }
