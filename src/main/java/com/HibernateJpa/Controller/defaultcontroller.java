@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class defaultcontroller {
 
-    @GetMapping("/")
-    public String getvalue(){
-        return " hello appliction run successfully";
+     @GetMapping("/")
+    public String health() {
+        return "OK";
     }
 
 }
