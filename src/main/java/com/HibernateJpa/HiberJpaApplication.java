@@ -14,6 +14,7 @@ public class HiberJpaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HiberJpaApplication.class, args);
+		System.out.println("Hello bhai g");
 	}
 
 
