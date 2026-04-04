@@ -20,6 +20,7 @@ public class Department {
     Long id;
 
     String name;
+    String department_head;
 
 
 }
